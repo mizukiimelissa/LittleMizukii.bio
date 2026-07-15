@@ -156,7 +156,6 @@
     transform: translate(0,0);
     box-shadow: 2px 2px 0 var(--ink);
   }
-  .link-btn.telegram{ background: linear-gradient(90deg, #E9F6FF, var(--paper)); }
   .link-btn.exclusive{
     background: linear-gradient(90deg, #2A2230, #1B0E2B);
     border-color: var(--ink);
@@ -318,13 +317,6 @@
         <span class="icon ex">🖤</span>
         <span class="label">more photos of me 🖤<small>18+ only</small></span>
       </a>
-
-      <a class="link-btn telegram" href="#" id="telegramLink">
-        <span class="icon tg">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.5 3.5 2.7 10.8c-1 .4-1 1.7.1 2l4.6 1.5 1.8 5.6c.2.7 1 .9 1.6.4l2.6-2.3 4.6 3.4c.7.5 1.7.1 1.9-.7l3.4-15.7c.2-1-.8-1.7-1.7-1.5Z"/></svg>
-        </span>
-        <span class="label">Telegram<small>Join the channel</small></span>
-      </a>
     </div>
 
     <div class="ig-banner" id="igBanner">
@@ -350,14 +342,7 @@
 
   <script>
     var FANVUE_URL = "https://www.fanvue.com/mizuki-little";
-    var TG_LINK = "https://t.me/+c8U6x0dQ7uo0OWU0";
     var pendingUrl = null;
-
-    var ua = navigator.userAgent || "";
-    var isInAppBrowser = /Instagram|FBAN|FBAV/i.test(ua);
-    if(isInAppBrowser){
-      document.getElementById('igBanner').classList.add('show');
-    }
 
     var overlay = document.getElementById('ageOverlay');
     var yesBtn = document.getElementById('ageYes');
@@ -371,11 +356,6 @@
     document.getElementById('exclusiveLink').addEventListener('click', function(e){
       e.preventDefault();
       openAgeGate(FANVUE_URL);
-    });
-
-    document.getElementById('telegramLink').addEventListener('click', function(e){
-      e.preventDefault();
-      openAgeGate(TG_LINK);
     });
 
     yesBtn.addEventListener('click', function(){
